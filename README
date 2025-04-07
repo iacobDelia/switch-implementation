@@ -1,0 +1,9 @@
+1 2 3
+
+Prima oara verific MAC-UL ca sa vad daca e frame BPDU sau nu. Daca nu, atunci aplic pseudocodul din etapa cu
+tabela de comutare pentru a-l redirectiona. Dupa ce decid interfata pe care vreau sa-l trimit, chem functia care
+se ocupa de etapa de VLAN. Daca il trimitem pe trunk vrem sa-i atasam tagul, daca e access vrem sa-l scoatem.
+
+Pentru bpdu am folosit pseudocodul din cerinta temei. Initializam ca DESIGNATED interfatele, si daca primim 
+informatie ca exista un switch cu prioritate mai mare, atunci blocam interfatele care duc la crearea de bucle.
+Switchul care este root trimite in continuu frameuri la restul switchurilor.
